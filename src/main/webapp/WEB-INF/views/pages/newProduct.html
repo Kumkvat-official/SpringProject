@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить товар</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/SpringProject/assortment/add}" th:object="${product}">
+    <label for="type">Тип: </label>
+    <input type="text" th:field="*{type}" id="type"/>
+    <div style="color:red" th:if="${#fields.hasErrors('type')}" th:errors="*{type}">Ошибка</div>
+    <hr/>
+    <div>
+        <p>В НАЗВАНИИ НЕ ДОЛЖНО БЫТЬ СИМВОЛА "/"!!!</p>
+    </div>
+    <label for="name">Название: </label>
+    <textarea type="text" th:field="*{name}" id="name">text</textarea>
+    <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Ошибка</div>
+    <hr/>
+    <label for="description">Описание: </label>
+    <textarea th:field="*{description}" id="description">Текст</textarea>
+    <div style="color:red" th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Ошибка</div>
+    <hr/>
+    <a>Наличие (штук)</a>
+    <label for="countInMoscow">Москва: </label>
+    <input type="number" th:field="*{countInMoscow}" id="countInMoscow"/>
+    <div style="color:red" th:if="${#fields.hasErrors('countInMoscow')}" th:errors="*{countInMoscow}">Ошибка</div>
+    <label for="countInKazan">Казань: </label>
+    <input type="number" th:field="*{countInKazan}" id="countInKazan"/>
+    <div style="color:red" th:if="${#fields.hasErrors('countInKazan')}" th:errors="*{countInKazan}">Ошибка</div>
+    <label for="countInBerlin">Берлин: </label>
+    <input type="number" th:field="*{countInBerlin}" id="countInBerlin"/>
+    <div style="color:red" th:if="${#fields.hasErrors('countInBerlin')}" th:errors="*{countInBerlin}">Ошибка</div>
+    <label for="countInTokyo">Токио: </label>
+    <input type="number" th:field="*{countInTokyo}" id="countInTokyo"/>
+    <div style="color:red" th:if="${#fields.hasErrors('countInTokyo')}" th:errors="*{countInTokyo}">Ошибка</div>
+    <label for="countInStockholm">Стокгольм: </label>
+    <input type="number" th:field="*{countInStockholm}" id="countInStockholm"/>
+    <div style="color:red" th:if="${#fields.hasErrors('countInStockholm')}" th:errors="*{countInStockholm}">Ошибка</div>
+    <input type="submit" value="Добавить товар">
+</form>
+<hr/>
+<a href="/SpringProject">На главную</a>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Видеокарты</title>
+</head>
+<body>
+<div th:each="product: ${products}">
+    <a th:text="${product.getName()}" th:href="@{/SpringProject/assortment/{type}/{name}(type=${product.getType()}, name=${product.getName()})}">text</a>
+    <hr/>
+</div>
+<div>
+    <a href="/SpringProject/assortment">К ассортименту</a>
+</div>
+<div>
+    <a href="/SpringProject">На главную</a>
+</div>
+</body>
+</html>

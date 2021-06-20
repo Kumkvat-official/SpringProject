@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Удалить товар</title>
+</head>
+<body>
+<p style="color:red" th:text="'Вы действительно хотите удалить товар '  + ${product.getName()} + '? Отменить это действие будет невозможно.'"></p>
+<form th:method="DELETE"
+      th:action="@{/SpringProject/assortment/{type}/{name}/delete (type=${product.getType()}, name=${product.getName()})}">
+    <input type="submit" value="Да, удалить"/>
+</form>
+<hr/>
+<a th:href="@{/SpringProject/assortment/{type}/{name} (type=${product.getType()}, name=${product.getName()})}">Назад к товару</a>
+</body>
+</html>

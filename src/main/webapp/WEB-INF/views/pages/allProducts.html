@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Все товары</title>
+</head>
+<body>
+<p>Видеокарты</p>
+<div th:each="product: ${vieocards}">
+    <a th:text="${product.getName()}" th:href="@{/SpringProject/assortment/{type}/{name}(type=${product.getType()}, name=${product.getName()})}">text</a>
+</div>
+<hr/>
+<p>Материнские платы</p>
+<div th:each="product: ${motherboards}">
+    <a th:text="${product.getName()}" th:href="@{/SpringProject/assortment/{type}/{name}(type=${product.getType()}, name=${product.getName()})}">text</a>
+</div>
+<hr/>
+<p>Процессоры</p>
+<div th:each="product: ${cpu}">
+    <a th:text="${product.getName()}" th:href="@{/SpringProject/assortment/{type}/{name}(type=${product.getType()}, name=${product.getName()})}">text</a>
+</div>
+<hr/>
+<p>Твердотельные накопители данных (SSD)</p>
+<div th:each="product: ${ssd}">
+    <a th:text="${product.getName()}" th:href="@{/SpringProject/assortment/{type}/{name}(type=${product.getType()}, name=${product.getName()})}">text</a>
+</div>
+<hr/>
+<p>Жёсткие диски (HDD)</p>
+<div th:each="product: ${hdd}">
+    <a th:text="${product.getName()}" th:href="@{/SpringProject/assortment/{type}/{name}(type=${product.getType()}, name=${product.getName()})}">text</a>
+</div>
+<hr/>
+<p>Оперативная память</p>
+<div th:each="product: ${ram}">
+    <a th:text="${product.getName()}" th:href="@{/SpringProject/assortment/{type}/{name}(type=${product.getType()}, name=${product.getName()})}">text</a>
+</div>
+<hr/>
+<p>Блоки питания</p>
+<div th:each="product: ${power}">
+    <a th:text="${product.getName()}" th:href="@{/SpringProject/assortment/{type}/{name}(type=${product.getType()}, name=${product.getName()})}">text</a>
+</div>
+<hr/>
+<p>Кулеры для процессора</p>
+<div th:each="product: ${coolers}">
+    <a th:text="${product.getName()}" th:href="@{/SpringProject/assortment/{type}/{name}(type=${product.getType()}, name=${product.getName()})}">text</a>
+</div>
+<hr/>
+<p>Корпуса</p>
+<div th:each="product: ${cases}">
+    <a th:text="${product.getName()}" th:href="@{/SpringProject/assortment/{type}/{name}(type=${product.getType()}, name=${product.getName()})}">text</a>
+</div>
+<hr/>
+<p>Корпусные вентиляторы</p>
+<div th:each="product: ${fans}">
+    <a th:text="${product.getName()}" th:href="@{/SpringProject/assortment/{type}/{name}(type=${product.getType()}, name=${product.getName()})}">text</a>
+</div>
+<hr/>
+<div>
+    <a href="/SpringProject/assortment">К ассортименту</a>
+</div>
+<div>
+    <a href="/SpringProject">На главную</a>
+</div>
+</body>
+</html>

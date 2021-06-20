@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Нет в наличии</title>
+</head>
+<body>
+<p style="color:orange" th:text="'К сожалению, ' + ${product.getName()} + ' в ' + *{place} + ' сейчас нет в наличии('">text</p>
+<hr/>
+<div>
+    <a href="/SpringProject/assortment">К ассортименту</a>
+</div>
+<a href="/SpringProject">На главную</a>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Просмотр товара</title>
+</head>
+<body>
+<p th:text="${product.getName()}">text</p>
+<hr/>
+<p th:text="${product.getDescription()}">text</p>
+<p th:text="'Наличие на складах: '">text</p>
+<p th:text="${'Москва - ' + product.getCountInMoscow()}">text</p>
+<p th:text="${'Казань - ' + product.getCountInKazan()}">text</p>
+<p th:text="${'Берлин - ' + product.getCountInBerlin()}">text</p>
+<p th:text="${'Токио - ' + product.getCountInTokyo()}">text</p>
+<p th:text="${'Стокгольм - ' + product.getCountInStockholm()}">text</p>
+<hr/>
+<div>
+    <a th:href="@{/SpringProject/assortment/{type}/{name}/buy(type=${product.getType()}, name=${product.getName()})}">Купить</a>
+</div>
+<hr/>
+<div>
+    <a href="/SpringProject/assortment">К ассортименту</a>
+</div>
+<a href="/SpringProject">На главную</a>
+</body>
+</html>

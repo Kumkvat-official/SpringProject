@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Купить</title>
+</head>
+<body>
+<p style="color:green" th:text="'Выберите филлиал, с которого хотите забрать '+ ${product.getName()} + ':'"></p>
+<div>
+    <a th:text="'Москва (Осталось ' + ${product.getCountInMoscow()} + ' шт.)'"
+       th:href="@{/SpringProject/assortment/{type}/{name}/buy/{place}(type=${product.getType()}, name=${product.getName()}, place=*{'Москва'})}">text</a>
+</div>
+<div>
+    <a th:text="'Казань (Осталось ' + ${product.getCountInKazan()} + ' шт.)'"
+       th:href="@{/SpringProject/assortment/{type}/{name}/buy/{place}(type=${product.getType()}, name=${product.getName()}, place=*{'Казань'})}">text</a>
+</div>
+<div>
+    <a th:text="'Берлин (Осталось ' + ${product.getCountInBerlin()} + ' шт.)'"
+       th:href="@{/SpringProject/assortment/{type}/{name}/buy/{place}(type=${product.getType()}, name=${product.getName()}, place=*{'Берлин'})}">text</a>
+</div>
+<div>
+    <a th:text="'Токио (Осталось ' + ${product.getCountInTokyo()} + ' шт.)'"
+       th:href="@{/SpringProject/assortment/{type}/{name}/buy/{place}(type=${product.getType()}, name=${product.getName()}, place=*{'Токио'})}">text</a>
+</div>
+<div>
+    <a th:text="'Стокгольм (Осталось ' + ${product.getCountInStockholm()} + ' шт.)'"
+       th:href="@{/SpringProject/assortment/{type}/{name}/buy/{place}(type=${product.getType()}, name=${product.getName()}, place=*{'Стокгольм'})}">text</a>
+</div>
+</body>
+</html>
